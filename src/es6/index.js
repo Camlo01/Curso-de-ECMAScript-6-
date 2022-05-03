@@ -123,12 +123,12 @@ let listOfNames2 = names.map(item => console.log(item.name))
 
 //E6
 const listOfNames3 = (name, age, country)=>{
-  ...a
+  [...a]
 ;}
 
 //E6
 const listOfNames4 = name => {
-  ...b
+  [...b]
 };
 
 const square = num => num * num;
@@ -152,3 +152,53 @@ helloPromise()
 .then(() => console.log('Hola'))
 .catch(error => console.log(error));
 
+//-----------------------------------------------------
+
+// Clases, Modulos y Generadores
+// Funciones de ECMAScript 6+
+
+// Clases
+
+class calculator {
+  constructor(){
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+
+  sum(valueA, valueB){
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+
+  }
+}
+
+const calc = new calculator();
+console.log(calc.sum(2,2))
+
+
+//-----------------------------------------------------
+
+//Import y Export
+
+import { hello } from './module';
+
+hello();
+
+
+//-----------------------------------------------------
+
+//Generator
+
+function* helloWorld(){
+  if (true){
+    yield 'Hello, ';
+  }
+  if (true){
+    yield 'World';
+  }
+}
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value); //Hello,
+console.log(generatorHello.next().value); // Worold
+console.log(generatorHello.next().value);
