@@ -9,7 +9,7 @@ const data = {
 };
 
 //Nos retorna un arreglo
-const entries = Object.entries(data);
+const entries = Object.entries(data); //Convertir objeto a arreglo
 
 console.log(entries);
 
